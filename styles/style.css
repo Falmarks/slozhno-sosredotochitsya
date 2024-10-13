@@ -1,5 +1,416 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: var(--background-image);
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  padding: 0px 10px 0px;
+}
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+}
+/*Рамки*/
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+.header::before {
+  right: 10px;
+  top: 10px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+}
+.header::after {
+  left: 10px;
+  bottom: 10px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+.footer::before {
+  right: 10px;
+  top: 10px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+}
+.footer::after {
+  left: 10px;
+  bottom: 10px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+/*Запись*/
+.rec {
+  position: absolute;
+  text-transform: uppercase;
+  top: 10px;
+  right: clamp(10px, 2.6vw, 29px);
+  width: 52px;
+  height: 26px;
+  color: var(--accent-color);
+}
+.rec::after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  bottom: 9px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  filter: blur(2px);
+  transition: 2s;
+  background-color: var(--accent-color);
+}
+/*Переключатель*/
+.header__theme-menu-item {
+  background-color: transparent
+}
+.header__theme-menu {
+  display: block;
+  align-self: center;
+  justify-self: right;
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.header__theme-menu-item {
+  list-style: none;
+}
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  line-height: 20px;
+  text-transform: lowercase;
+  font-size: 18px;
+  outline: none;
+  color: var(--accent-color);
+}
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+}
+
+/*Титульник*/
+.header__title {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--focus-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title-decor {
+  display: inline-block;
+  align-self: center;
+  justify-self: end;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  inline-size: 100%;
+  background-color: var(--accent-color);
+  color: var(--main-background-color);
+}
+
+/*Блок с текстом*/
+.main__block {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main__text {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  inline-size: 100%;
+}
+
+.main__text__block {
+  display: grid;
+  gap: 20px;
+}
+
+.semantic__block {
+  display: grid;
+  gap: 10px;
+}
+
+.semantic__text {
+  display: grid;
+  gap: 10px;
+}
+
+.accent__text {
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.accent__text-slim {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  min-height: 100vh;
+  display: grid;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--focus-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+      --main-text-color: #152028;
+      --main-background-color: #fff;
+  }
+}
+
+@media (1024px > width >=768px) {
+
+  /* Для планшета и десктопа */
+  .page {
+      padding: 20px 20px 0px;
+  }
+
+  .rec {
+      top: 20px;
+  }
+
+  .header__title {
+      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .title-text {
+      inline-size: 50%;
+  }
+
+  .header::before {
+      right: 20px;
+      top: 20px;
+  }
+
+  .header::after {
+      left: 20px;
+      bottom: 20px;
+  }
+
+  .footer::before {
+      right: 20px;
+      top: 20px;
+  }
+
+  .footer::after {
+      left: 20px;
+      bottom: 20px;
+  }
+
+  .accent__left-column {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .semantic__left-column {
+      grid-column: 2 / span 2;
+  }
+
+  .semantic__left-column>h3:first-child {
+      margin-bottom: 10px;
+  }
+
+  .accent__left-and-top {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: fit-content(250px) 1fr 1fr;
+  }
+
+  .semantic__left-and-top {
+      grid-row: 2 / span 3;
+      grid-column: 1 / span 3;
+  }
+
+  .gallery {
+      gap: 20px;
+      grid-template-columns: repeat(3, min(230px));
+      grid-template-rows: 192px 230px 318px;
+      align-self: center;
+      max-width: 100%;
+  }
+
+  .sunset {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+  }
+
+  .icecream {
+      grid-column: 3 / span 2;
+      grid-row: 1 / span 2;
+  }
+
+  .tape {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 2;
+  }
+
+  .book {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+  }
+
+  .street {
+      grid-column: 2 / span 3;
+      grid-row: 3 / span 1;
+  }
+
+}
+
+@media (width >=1024px) {
+  .page {
+      padding: 20px 20px 0px;
+  }
+
+  .rec {
+      top: 20px;
+  }
+
+  .header__title {
+      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .title-text {
+      inline-size: 50%;
+  }
+
+  .header::before {
+      right: 20px;
+      top: 20px;
+  }
+
+  .header::after {
+      left: 20px;
+      bottom: 20px;
+  }
+
+  .header__theme-menu {
+      align-self: flex-start;
+      justify-self: center;
+  }
+
+  .header__theme-menu-list {
+      flex-direction: row;
+  }
+
+  .footer::before {
+      right: 20px;
+      top: 20px;
+  }
+
+  .footer::after {
+      left: 20px;
+      bottom: 20px;
+  }
+
+  .accent__left-column {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .semantic__left-column {
+      grid-column: 2 / span 2;
+  }
+
+  .semantic__left-column>h3:first-child {
+      margin-bottom: 10px;
+  }
+
+  .accent__left-and-top {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: fit-content(250px) 1fr;
+      grid-template-areas:
+          "accent__text accent__text accent__text"
+          ". . .";
+  }
+
+  .semantic__left-and-top {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row: 2 / span 3;
+      grid-column: 1 / span 3;
+      gap: 20px;
+  }
+
+  .gallery {
+      gap: 20px;
+      grid-template-columns: repeat(3, min(315px));
+      grid-template-rows: 260px 315px 649px;
+      align-self: center;
+      max-width: 100%;
+  }
+
+  .sunset {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+  }
+
+  .icecream {
+      grid-column: 3 / span 2;
+      grid-row: 1 / span 2;
+  }
+
+  .tape {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 2;
+  }
+
+  .book {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+  }
+
+  .street {
+      grid-column: 2 / span 3;
+      grid-row: 3 / span 1;
+  }
+
 }
