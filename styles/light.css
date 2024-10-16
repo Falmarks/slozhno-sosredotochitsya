@@ -1,26 +1,19 @@
-/*Переменные*/
-.page.theme_light{
-  --font-family: "IBM Plex Mono", sans-serif;
-  --main-background-color:#FFC2E6;
-  --background-image: url(/images/cover-image-light.png);
-  --main-text-color: #353430;
-  --accent-color: #ff0070;
-  --focus-color: #FF8DCB;
+.page.theme_light {
+  --main-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --text-color: #353430;
+  --main-title-color: #ffc2e6;
+  --main-title-shadow-color: #ff0070;
+  --title-color: #353430;
+  --title-decor-color: #000028;
+  --title-font-size: 18px;
+  --font-size: 18px;
+  --decorate-color: #353430;
+  --button-hover-color: rgba(21%, 20%, 19%, 0.5);
+  --bg-image: url(../images/cover-image-light.png);
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    --font-family: "IBM Plex Mono", sans-serif;
-    --background-image: url(/images/cover-image-light.png);
-    --main-background-color:#FFC2E6;
-    --main-text-color: #353430;
-    --accent-color: #ff0070;
-    --focus-color: #FF8DCB;
-  }
-}
-/*Кнопка записи*/ 
-.rec {
-  display: none;
-}
-.rec::after {
+
+.theme_light .header__decoration-item,
+.theme_light .header__decoration-item::after {
   display: none;
 }
