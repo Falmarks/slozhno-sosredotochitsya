@@ -1,14 +1,14 @@
 :root {
   --main-color: #fff1f7;
   --accent-color: #ff8dcb;
-  --text-color: #353430;
   --main-title-color: #ffc2e6;
-  --main-title-shadow-color: #ff0070;
+  --text-color: #353430;
   --title-color: #353430;
+  --decorate-color: #353430;
+  --main-title-shadow-color: #ff0070;
   --title-decor-color: #000028;
   --title-font-size: 18px;
   --font-size: 18px;
-  --decorate-color: #353430;
   --button-hover-color: rgba(21%, 20%, 19%, 0.5);
   --bg-image: url(../images/cover-image-light.png);
 }
