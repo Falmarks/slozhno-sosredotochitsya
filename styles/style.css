@@ -1,6 +1,5 @@
 .page {
   display: grid;
-  box-sizing: border-box;
   min-inline-size: 375px;
   max-inline-size: 1024px;
   gap: min(10.6vi, 60px);
@@ -21,7 +20,6 @@
   padding-inline-start: min(2.65vi, 20px);
   padding-inline-end: min(2.65vi, 20px);
   max-width: 100%;
-  box-sizing: border-box;
 }
 
 .header,
@@ -62,22 +60,8 @@ footer {
   cursor: pointer;
 }
 
-/* Рамки */
-.header::after,
-.footer::after {
-  content: '';
-  position: absolute;
-  border-inline-start: 1px solid var(--decorate-color);
-  border-block-end: 1px solid var(--decorate-color);
-  background-color: transparent;
-  inline-size: 25px;
-  block-size: 25px;
-  inset-inline-start: min(2.6vi, 20px);
-  inset-block-end: min(2.6vi, 20px);
-}
-
-.header::before,
-.footer::before {
+/* Рамка */
+.decoration__zone::before {
   content: '';
   position: absolute;
   border-inline-end: 1px solid var(--decorate-color);
@@ -89,6 +73,18 @@ footer {
   inset-block-start: min(2.6vi, 20px);
 }
 
+.decoration__zone::after {
+  content: '';
+  position: absolute;
+  border-inline-start: 1px solid var(--decorate-color);
+  border-block-end: 1px solid var(--decorate-color);
+  background-color: transparent;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: min(2.6vi, 20px);
+  inset-block-end: min(2.6vi, 20px);
+}
+
 /* Запись*/
 .header__decoration-item {
   display: block;
@@ -97,19 +93,19 @@ footer {
   width: 52px;
   height: 26px;
   top: min(3vi, 25px);
-  right: min(3vi, 25px);
+  right: min(4.7vi, 25px);
   color: var(--accent-color);
 }
 
 .header__decoration-item::after {
   content: '';
   position: absolute;
-  right: 5px;
+  right: 2px;
   bottom: 9px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  filter: blur(2px);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   transition: 2s;
   background-color: var(--accent-color);
 }
@@ -134,8 +130,8 @@ footer {
 
 .header__theme-menu {
   max-height: 50vw;
-  align-self: center;
   justify-self: right;
+  align-self: center;
   margin-block-end: 6px;
 }
 
@@ -197,7 +193,7 @@ footer {
 .footer__title {
   color: var(--main-title-color);
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 95.7px;
   text-shadow: 2px 2px 0 var(--main-title-shadow-color);
 }
@@ -224,7 +220,8 @@ footer {
 }
 
 .gallery__section {
-  margin-top: 60px;
+  margin-top: 35px;
+  gap: 10px;
 }
 
 .gallery {
@@ -233,6 +230,7 @@ footer {
 }
 
 .image {
+  display: block;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -264,11 +262,15 @@ footer {
   .inline>.section__content-blocks {
       grid-area: text-block;
   }
-
+  .gallery__section {
+    margin-top: 60px;
+    gap: 20px;
+  }
+  
   .gallery {
       gap: 20px;
-      grid-template-columns: repeat(3, 229px);
-      grid-template-rows: 192px 229px 318px;
+      grid-template-columns: 229px 230px 229px;
+      grid-template-rows: 192px 230px 318px;
       align-self: center;
       max-width: 100%;
   }
@@ -318,8 +320,8 @@ footer {
 
   .gallery {
       gap: 20px;
-      grid-template-columns: repeat(3, 315px);
-      grid-template-rows: 260px 315px 649px;
+      grid-template-columns: 315px 315px 315px;
+      grid-template-rows: 260px 315px 428px;
       align-self: center;
       max-width: 100%;
   }

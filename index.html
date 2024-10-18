@@ -19,7 +19,7 @@
 </head>
 
 <body class="page theme_dark">
-    <header class="header">
+    <header class="header decoration__zone">
         <nav class="header__theme-menu">
             <ul class="header__theme-menu-list">
                 <li class="header__theme-menu-item">
@@ -134,17 +134,18 @@
             </div>
             <div class="section gallery__section">
                 <h3 class="title title__decor">А можно в картинках?</h3>
-                <div class="gallery">
-                    <img src="./images/sunset.png" alt="Закат." class="sunset image" />
-                    <img src="./images/ice-cream.png" alt="Мороженное." class="icecream image" />
-                    <img src="./images/tape.png" alt="Кассета." class="tape image" />
-                    <img src="./images/books.png" alt="Книги." class="book image" />
-                    <img src="./images/street.png" alt="Улица." class="street image" />
-                </div>
+                <ul class="gallery">
+                    <li class="sunset"><img class="image" src="./images/sunset.png" alt="Закат."/></li>
+                    <li class="icecream"><img class=" image" src="./images/ice-cream.png" alt="Мороженное."/></li>
+                    <li class="tape image" ><img class="image" src="./images/tape.png" alt="Кассета."/></li>
+                    <li class="book image" ><img class="image" src="./images/books.png" alt="Книги."/></li>
+                    <li class="street image" ><img class="image" src="./images/street.png" alt="Улица."/></li>
+                </ul>
             </div>
         </section>
     </main>
-    <footer class="footer content__section">
+    <footer class="footer content__section decoration__zone">
+        <div class="decoration__zone"></div>
         <h2 class="footer__title title">focus</h2>
     </footer>
     <script src="./scripts/script.js"></script>
