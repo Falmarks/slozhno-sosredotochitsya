@@ -17,3 +17,25 @@
 .theme_light .header__decoration-item::after {
   display: none;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+      --main-color: #fff1f7;
+      --accent-color: #ff8dcb;
+      --main-title-color: #ffc2e6;
+      --text-color: #353430;
+      --title-color: #353430;
+      --decorate-color: #353430;
+      --main-title-shadow-color: #ff0070;
+      --title-decor-color: #000028;
+      --title-font-size: 18px;
+      --font-size: 18px;
+      --button-hover-color: rgba(21%, 20%, 19%, 0.5);
+      --bg-image: url(../images/cover-image-light.png);
+  }
+
+  .theme_light .header__decoration-item,
+  .theme_light .header__decoration-item::after {
+      display: none;
+  }
+}
