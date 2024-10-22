@@ -34,8 +34,8 @@
       --bg-image: url(../images/cover-image-light.png);
   }
 
-  .theme_light .header__decoration-item,
-  .theme_light .header__decoration-item::after {
+  .theme_auto .header__decoration-item,
+  .theme_auto .header__decoration-item::after {
       display: none;
   }
 }
