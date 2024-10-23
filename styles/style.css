@@ -19,12 +19,13 @@
 .content__section {
   padding-inline-start: min(2.65vi, 20px);
   padding-inline-end: min(2.65vi, 20px);
-  max-width: 100%;
+  max-inline-size:100%;
 }
 
 .header,
 footer {
   min-height: 668px;
+  width:100%;
 }
 
 /* Титульник */
@@ -229,6 +230,11 @@ footer {
   gap: 10px;
 }
 
+.gallery__title {
+  width: 100%;
+  justify-self: center;
+}
+
 .image {
   display: block;
   height: 100%;
@@ -263,6 +269,7 @@ footer {
       grid-area: text-block;
   }
   .gallery__section {
+    max-inline-size:100vw;
     margin-top: 60px;
     gap: 20px;
   }
@@ -274,11 +281,6 @@ footer {
       align-self: center;
       justify-content: center;
       max-width: 100%;
-  }
-
-  .gallery__title {
-    width: 728px;
-    justify-self: center;
   }
 
   .sunset {
@@ -329,14 +331,10 @@ footer {
 
   .gallery {
       gap: 20px;
-      grid-template-columns: 315px 315px 315px;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 260px 315px 428px;
       align-self: center;
       max-width: 100%;
-  }
-  .gallery__title {
-    width: 985px;
-    justify-self: center;
   }
 
   .sunset {
